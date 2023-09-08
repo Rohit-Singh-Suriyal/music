@@ -1,0 +1,750 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+*{
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+   
+}
+body{
+
+width:100%;
+height:100vh;
+background: rgb(3, 3, 3);
+padding:10px;
+font-family: 'Kanit', sans-serif;
+}
+header{
+  width:85%;
+  height:95%;
+  position: relative;
+  
+  margin:auto;
+  display:flex;
+  flex-wrap: wrap;
+
+
+}
+header .menu_side,.song_side{
+    height:95%;
+    width:25%;
+   
+}
+.menu_side{
+    background-color: rgb(23, 25, 36);
+    box-shadow: rgba(34, 25, 161, 0.35) 0px 5px 15px;
+}
+.song_side{
+    flex-basis:75%;
+    background-color: rgb(36, 36, 61);
+}
+.masterplay{
+    width:100%;
+    height:10%;
+    background-color: rgb(31, 39, 88);
+
+    box-shadow: rgba(79, 48, 104, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+header h1{
+    color:white;
+    font-size: 1.6rem;
+    margin:10px; 
+}
+.playlist{
+    margin-top:10px;
+    margin-left:10px;
+}
+
+.playlist h4{
+    
+    font-size:1.2rem;
+    padding-bottom:5px;
+    color:rgb(165, 155, 155);
+    cursor:pointer;
+    transition:3sec liner;
+
+}
+.playlist h4:hover{
+ color:white;
+}
+.playlist span{
+  position:relative;
+  margin-right:35px;
+
+
+
+}
+.playlist span::before{
+   content:" ";
+   position:absolute;
+   width:4px;
+   height:4px;
+   border:2px solid rgb(112, 108, 108);
+   border-radius:50%;
+   top:-5px;
+   transition:.3sec linear;
+
+
+}
+.playlist h4{
+    display:flex;
+    align-items: center;
+
+
+}
+.playlist h4:hover span::before{
+    border:2px solid white;
+}
+.playlist  .fa-solid{
+    display:none;
+}
+.playlist .active{
+    color:rgb(22, 101, 219)
+}
+.playlist .active span{
+    display:none;
+}
+ .active .fa-solid {
+   display:flex;
+   margin-right:10px;
+  
+}
+.menu-song{
+   width:100%;
+   height:463px;
+   
+   margin-top:20px;
+   color:white;
+   overflow:auto;
+
+}
+.menu-song::-webkit-scrollbar{
+    display: none;
+}
+.menu-song .songitem{
+  list-style: none;
+  position:relative;
+  padding:4px 0px 2px 20px;
+  display:flex;
+  align-items: center;
+  margin-bottom:15px;
+  cursor:pointer;
+  transition: .3s linear;
+ 
+
+}
+.menu-song .songitem:hover{
+   
+ background-color: rgb(255, 255, 255,0.3);
+/*background colour pe transition lagaya hai*/
+    
+}
+.menu-song li img{
+    height: 44px;
+    width: 44px;
+    margin-left: 25px;
+    margin-right: 20px;
+}
+.menu-song li h5{
+    position:relative;
+    width:178px;
+    height:43px;
+   
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px
+   
+}
+.menu-song li .subtitle{
+    color:rgb(78, 77, 77);
+    font-size:15px;
+}
+.menu-song li .fa-solid{
+    position: absolute;
+    right:18px;
+}
+.masterplay{
+    display:flex;
+    align-items: center;
+    padding:0 20px;
+}
+.masterplay .wave{
+
+    width:30px;
+    height:30px;
+   
+    padding-bottom:5px;
+    display:flex;
+    align-items: flex-end;
+    margin-right:10px;
+} 
+.wave .active1{
+    animation:wave .5s linear infinite;
+}
+.wave1{
+    width:3px;
+    height:10px;
+    background-color: rgb(3, 209, 236);
+    margin:2px;
+    border-radius: 10px 10px 0px 0px;
+}
+.wave1:nth-child(2){
+    height:13px;
+    animation-delay:2s
+}
+.wave1:nth-child(3){
+    height:15px;
+    animation-delay:.9s
+}
+/*javacript classs*/
+.wave1.active1{
+    animation:wave .5s linear infinite;
+}
+.wave1:nth-child(2).active1{
+   
+    animation-delay:.8s;
+
+}
+
+.wave1:nth-child(3).active1{
+  
+    animation-delay:.10s;
+    
+}
+.masterplay img{
+    width:40px;
+    height:40px;
+}
+
+
+
+@keyframes wave {
+    0%{
+        height:10px;
+    }
+    50%{
+        height:15px;
+    }
+    100%{
+         height:10px;
+    }
+    
+}
+.title{
+  
+  width:135px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-left:10px;
+  color:white;
+  font-size:16px;
+
+}
+.title .master_subtitle{
+    font-size:13px;
+    color:rgb(251, 255, 255);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.masterplay .icons{
+    cursor: pointer;
+    font-size:15px;
+    color:white;
+    margin:0px 4px;
+    display: flex;
+    align-items: center;
+    
+}
+.icons .fa-solid{
+    margin:0px 7px;
+}
+.masterplay #currentstart{
+    margin: 4px 0px 0px 7px;
+    color: white;
+    font-size: 18px;
+    width: 32px;
+    font-weight:400px;
+}
+ .bar{
+    position: relative;
+    width: 43%;
+    height: 3px;
+    background-color: rgb(34 55 112);
+    margin-left: 23px;
+}
+.masterplay .bar .bar2{
+    position:absolute;
+    background-color: rgb(146, 161, 161);
+    width:0;
+    height:3px;
+    top:0px;
+
+
+
+}
+.masterplay .bar .dot{
+    position:absolute;
+    width:5px;
+    height:5px;
+    background-color: aqua;
+    border-radius:50%;
+    left:0%;
+    top:-1.5px;
+    transition:1s linear;
+
+    
+}
+.masterplay .bar .dot::before{
+  content:" ";
+  position:absolute;
+  width:15px;
+  height:15px;
+  border:1px solid aqua;
+  border-radius:50%;
+  left:-7px;
+  top:-6.5px;
+  box-shadow: inset 0px 0px 3px aqua;
+
+}
+.masterplay .bar input{
+  position:absolute;
+  width:100%;
+  top:-7px;
+  left:0;
+  cursor:pointer;
+  z-index:9999999999999999999;
+  opacity:0;
+
+}
+.masterplay .vol{
+  position:relative;
+  width:100px;
+   height:2px;
+   background-color: rgb(105,105,170,.1);
+   margin-left: 50px;
+
+}
+.masterplay .vol .fa-solid{
+ position:absolute;
+ color:white;
+ font-size:23px;
+ top:-11px;
+ left:-34px;
+
+}
+.masterplay input{
+  position:absolute;
+  width:100%;
+  height:2px;
+  top:-7px;
+  left:0;
+  cursor:pointer;
+  z-index:9999999999999999999999;
+  opacity:0;
+
+
+
+}
+.masterplay .volbar{
+    position:absolute;
+    background-color: aqua;
+    width:100%;
+    height:100%;
+    top:0;
+    height:0.5px;
+    transition: 1s linear;
+
+}
+.masterplay .dot{
+    position:absolute;
+    width:5px;
+    height:5px;
+    background-color: aqua;
+    border-radius:50%;
+    left:100%;
+    top:-1.5px;
+    transition:1s linear;
+
+  
+  
+
+
+}
+.masterplay .dot::before{
+    content:" ";
+    position:absolute;
+    width:15px;
+    height:15px;
+    border:1px solid aqua;
+    border-radius:50%;
+    left:-7px;
+    top:-6.5px;
+    box-shadow: inset 0px 0px 3px aqua;
+}
+header .song_side{
+    z-index:2;
+}
+header .song_side::before{
+    content: " ";
+    position: absolute;
+    width: 20%;
+    height: 296px;
+    background: url('./image/jcole\ \(1\).png')no-repeat;
+    right: 70px;
+    top: -18px;
+    z-index: -1;
+    
+
+
+}
+.song_side nav{
+     width:90%;
+     height:10%;
+    
+     margin:auto;
+     display:flex;
+     align-items:center;
+     justify-content:space-between;
+     color:white;
+
+}
+.song_side nav ul{
+  display: flex;
+
+}
+.song_side nav ul li{
+
+    list-style:none;
+    position:relative;
+    font-size:20px;
+    color:#4c5262;
+    cursor:pointer;
+    transition:.3sec linear;
+    margin-right:25px;
+
+
+}
+.song_side nav ul li:hover{
+    color:white;
+}
+.song_side nav ul li span{
+    position:absolute;
+    width:100%;
+    height:3px;
+    background-color: aqua;
+    bottom:-5px;
+    left:0;
+    border-radius:20px;
+ 
+
+
+}
+.song_side  .search{
+      position:relative;
+      width:40%;
+      padding:1px 10px;
+      border-radius:20px;
+      border:1px solid white;
+      color:gray;
+      margin-right:114px;
+}
+.song_side  .search::before{
+  content:" ";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background: (184,184,184,.1);
+  border-radius:20px;
+  backdrop-filter: blur(5px);
+ z-index: -1;
+
+
+
+
+
+
+}
+.search input{
+    background: none;
+    border:none;
+    outline:none;
+    padding:0px 10px;
+    color:white;
+    font-size:16px;
+
+}
+.user{
+    position: relative;
+    width: 41px;
+    height: 42px;
+    border: 1px solid white;
+    border-radius: 50%;
+
+}
+.user img{
+    
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+    box-shadow: 2px 2px 8px #121213;
+
+
+}
+.song_side .content{
+    width:90%;
+    height:30%;
+    margin:auto;
+    padding-top:20px;
+
+
+
+}
+.content h1{
+    font-size:25px;
+    font-weight:600;
+}
+.content p{
+ font-size:17px;
+ font-weight:400;
+ color:#4c5262;
+ margin:5px;
+
+}
+
+.content .buttons button{
+    margin-top: 20px;
+    width:130px;
+    height:30px;
+    border:2px solid aqua;
+    outline:none;
+    border-radius: 23px;
+    background: aqua;
+    color:rgb(43, 37, 37);
+    cursor:pointer;
+    transition:.3s linear;
+    font-size: 16px;
+    font-weight:bold;
+}
+.content .buttons button:hover{
+    background: none;
+    color:aqua;
+   
+}
+.content .buttons button:nth-child(2){
+    background:none;
+    color:white;
+    font-weight: bold;
+}
+.content .buttons button:nth-child(2):hover{
+    background: aqua;
+    color:black;
+}
+*{
+    color:white;
+}
+.popular .h4{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+    margin-top:34px;
+
+
+}
+.popular .h4 .fa-solid{
+
+    color:#a4a8b4;
+    cursor: pointer;
+    padding:5px;
+}
+.popular .h4 .fa-solid:hover{
+    color:white;
+}
+.popsongs
+{ 
+    width:100%;
+    height:150px;
+    margin-top:15px;
+    display:flex;
+   
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+.popsongs::-webkit-scrollbar{
+    display: none;
+}
+.popsongs li{
+  min-width: 100px;
+  height:140px;
+  list-style-type:none;
+  margin-right:10px;
+  transition: .3s linear;
+
+
+
+
+}
+.popsongs li:hover{
+   background-color: rgb(153, 146, 146,.2);
+
+}
+.popsongs .img_play{
+    position:relative;
+    width:100px;
+    height:100px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.popsongs .img_play img{
+   
+   width:100%;
+   height:100%;
+
+
+}
+.img_play .fa-solid{
+    position:absolute;
+    font-size:20px;
+    opacity:0;
+    cursor:pointer;
+    transition: .5s linear;
+}
+.popsongs li:hover .fa-solid{
+   opacity: 1;
+}
+.songitem h5{
+    padding:5px 0px 0px 5px;
+    line-height:15px ;
+    font-size: 15px;
+    width:100px;/* pixels mai hoga tbhi kaam karega*/
+    overflow:hidden ;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.songitem h5 .subtitle{
+    font-size:14px;
+    color:rgb(145, 141, 141);
+    margin-top:3px;
+}
+.btn_s{
+    margin-top:17px;
+}
+.popular_artist{
+    width: 100%;
+    height: 172px;
+    margin: auto;
+    margin-top: 15px;
+    margin-right: 44px;
+
+}
+.popular_artist .h4{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top:-5px;
+    font-size: 20px;
+
+
+}
+.popular_artist .h4 .fa-solid{
+
+    color:#a4a8b4;
+    cursor: pointer;
+    padding:5px;
+}
+.popular_artist .h4 .fa-solid:hover{
+    color:white;
+}
+.popular_artist .btn_s{
+     margin-top:2px;
+
+}
+.popular_artist .item{
+    width:100%;
+    height:auto;
+    margin-top:15px;
+    display:flex;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+.item li{
+    list-style: none;
+    position: relative;
+    min-width: 90px;
+    height: 96px;
+    border-radius: 50%;
+    margin-right: 20px;
+    cursor: pointer;
+    margin-top: 3px;
+    overflow: hidden;
+}
+.item li img{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+
+
+}
+.item::-webkit-scrollbar{
+    display:none;
+
+}
+#download_music{
+    text-decoration: none;
+    color:green;
+    
+
+}
+.search_result{
+    position:absolute;
+    width:100%;
+    height:246px;
+   
+    z-index:9999;
+    margin-top:10px;
+    border-radius:10px;
+    overflow:auto;
+}
+.search_result::-webkit-scrollbar{
+  display:none;
+}
+.search_result .card{
+      
+       width:100%;
+       min-height:45px;
+       
+       display:flex;
+       align-items:center;
+       justify-content:space-between;
+       background:rgb(184,184,184,.1);
+       margin-bottom:5px;
+       text-decoration:none;
+       display:none;
+
+
+
+
+}
+.search_result .card img{
+    width:35px;
+    height:35px;
+    border-radius:5px;
+}
+
+.search_result .card .content{
+    width:80%;
+    height:100%;
+   
+    padding:0;
+    font-size:13px;
+    font-weight:600;
+    color:white;
+}
+.search_result .card .content .subtitle{
+   font-size:11px;
+   color:#a4a8b4;
+   font-weight:500;
+
+}
